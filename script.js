@@ -118,3 +118,58 @@ revealElements.forEach(el => {
     el.classList.add('opacity-0'); // Initial state
     revealObserver.observe(el);
 });
+
+// Custom Cursor Logic
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorGlow = document.querySelector('.cursor-glow');
+
+if (cursorDot && cursorGlow && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let glowX = 0;
+    let glowY = 0;
+
+    // Track mouse
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+    });
+
+    // Smooth follow for glow
+    function animateGlow() {
+        const lerp = 0.15;
+        glowX += (mouseX - glowX) * lerp;
+        glowY += (mouseY - glowY) * lerp;
+        
+        cursorGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+        requestAnimationFrame(animateGlow);
+    }
+    animateGlow();
+
+    // Text & Content Detection (Hide Glow)
+    const textElements = document.querySelectorAll('p, h1, h2, h3, h4, h5, h6, input, textarea, label, span:not(.text-gradient)');
+    textElements.forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('glow-hidden'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('glow-hidden'));
+    });
+
+    // Interactive Detection (Intensify Glow)
+    const interactiveElements = document.querySelectorAll('a, button, .glass-card, .box');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', (e) => {
+            document.body.classList.remove('glow-hidden'); // Priority: Interactive > Text
+            document.body.classList.add('glow-active');
+        });
+        
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('glow-active');
+        });
+    });
+
+    // Click Animations
+    document.addEventListener('mousedown', () => document.body.classList.add('clicking'));
+    document.addEventListener('mouseup', () => document.body.classList.remove('clicking'));
+}
+
