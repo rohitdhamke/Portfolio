@@ -14,48 +14,12 @@
     <!-- Devicon -->
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
-    <!-- Tailwind CSS V2 -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Custom Styles for Tailwind Compatibility & Overrides -->
-    <style>
-        .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-heading { font-family: 'Outfit', sans-serif; }
-        .backdrop-blur-md { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
-        
-        /* Glassmorphism Cards - Enhanced */
-        .glass-card {
-            background: rgba(30, 41, 59, 0.4); /* Lighter, more transparent */
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .glass-card:hover {
-            background: rgba(30, 41, 59, 0.6);
-            border-color: rgba(99, 102, 241, 0.3); /* Indigo tint on hover */
-            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.2);
-        }
-        
-        /* Gradient Text */
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
-        }
-        
-        .text-gradient-blue {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(to right, #60a5fa, #3b82f6);
-        }
-    </style>
+    <!-- Tailwind CSS V3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
 
     <!-- Ions -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -63,45 +27,47 @@
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans antialiased overflow-x-hidden selection:bg-indigo-500 selection:text-white">
 
-    <!-- Gradient Background Effects -->
-    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob"></div>
-        <div class="absolute top-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div class="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-500 rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
-        <!-- Extra blob for more color -->
-        <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-500 rounded-full mix-blend-screen filter blur-3xl opacity-10 animate-blob animation-delay-1000"></div>
+
+    <!-- Atmospheric Background Effects -->
+    <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-black">
+        <!-- Mist 1 -->
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-neutral-800/30 rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob"></div>
+        <!-- Mist 2 -->
+        <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-gray-800/20 rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-blob animation-delay-2000"></div>
+        <!-- Mist 3 -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-zinc-900/30 rounded-full mix-blend-screen filter blur-[100px] opacity-20 animate-blob animation-delay-4000"></div>
     </div>
 
     <!-- Header/Nav -->
-    <header class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-md bg-gray-900 bg-opacity-70 border-b border-gray-800" id="header">
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur-xl bg-black/50 border-b border-white/5" id="header">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold font-heading text-indigo-400 tracking-tight flex items-center gap-2 group">
-                <ion-icon name="code-slash" class="text-white group-hover:text-indigo-400 transition-colors"></ion-icon>
+            <a href="#" class="text-2xl font-bold font-heading text-white tracking-tight flex items-center gap-2 group">
+                <ion-icon name="code-slash" class="text-gray-400 group-hover:text-white transition-colors"></ion-icon>
                 <span class="text-white">Rohit</span><span class="text-gray-400 group-hover:text-white transition-colors">Dhamke</span>
             </a>
             
             <nav class="hidden md:flex space-x-8 items-center">
                 <a href="#home" class="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group">
                     Home
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </a>
                 <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group">
                     About
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </a>
                 <a href="#skills" class="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group">
                     Skills
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </a>
                 <a href="#experience" class="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group">
                     Experience
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </a>
                 <a href="#projects" class="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group">
                     Projects
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-400 transition-all group-hover:w-full"></span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all group-hover:w-full"></span>
                 </a>
-                <a href="#contact" class="px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-indigo-600 to-purple-600 rounded-full hover:from-indigo-500 hover:to-purple-500 transition-all shadow-lg hover:shadow-indigo-500/25 transform hover:-translate-y-0.5 ring-2 ring-transparent hover:ring-indigo-400">
+                <a href="#contact" class="px-5 py-2.5 text-sm font-bold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-all shadow-lg transform hover:-translate-y-0.5">
                     Contact Me
                 </a>
             </nav>
@@ -113,88 +79,92 @@
 
         <div class="md:hidden hidden absolute top-full left-0 w-full bg-gray-900 border-b border-gray-800 shadow-2xl backdrop-blur-xl" id="mobile-menu">
             <div class="flex flex-col px-6 py-4 space-y-4">
-                <a href="#home" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Home</a>
-                <a href="#about" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">About</a>
-                <a href="#skills" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Skills</a>
-                <a href="#experience" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Experience</a>
-                <a href="#projects" class="mobile-link text-gray-300 hover:text-indigo-400 transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Projects</a>
-                <a href="#contact" class="mobile-link text-center text-white bg-indigo-600 font-bold p-3 rounded-lg hover:bg-indigo-700 shadow-lg">Contact Me</a>
+                <a href="#home" class="mobile-link text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Home</a>
+                <a href="#about" class="mobile-link text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">About</a>
+                <a href="#skills" class="mobile-link text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Skills</a>
+                <a href="#experience" class="mobile-link text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Experience</a>
+                <a href="#projects" class="mobile-link text-gray-300 hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-800 font-medium">Projects</a>
+                <a href="#contact" class="mobile-link text-center text-gray-900 bg-white font-bold p-3 rounded-lg hover:bg-gray-200 shadow-lg">Contact Me</a>
             </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center pt-32 md:pt-40 relative overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-24">
+        <section id="home" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-12">
                     <!-- Text Content -->
-                    <div class="flex-1 space-y-8 opacity-0 animate-fade-in-up z-10" style="animation-delay: 0.1s;">
-                        <div class="inline-flex items-center px-4 py-2 rounded-full border border-indigo-500 border-opacity-50 bg-indigo-500 bg-opacity-20 backdrop-blur-md text-indigo-200 text-sm font-medium shadow-lg hover:bg-opacity-30 transition-all cursor-default">
-                            <span class="w-2 h-2 rounded-full bg-green-400 mr-2 animate-pulse shadow-[0_0_10px_#4ade80]"></span>
-                            Open to Work & Internships
+                    <div class="md:w-1/2 text-center md:text-left space-y-6 animate-fade-in-up">
+                        <div class="inline-block px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-4 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+                            <span class="text-gray-300 text-sm font-medium tracking-wide">👋 Welcome to my portfolio</span>
                         </div>
                         
-                        <h1 class="text-5xl lg:text-7xl font-bold font-heading leading-tight tracking-tight">
-                            Building <span class="text-gradient">Digital Magic</span><br>
-                            for the Web.
+                        <h1 class="text-5xl md:text-7xl font-bold font-heading leading-tight tracking-tight text-white mb-2">
+                            Hi, I'm <br>
+                            <span class="text-gradient drop-shadow-2xl">Rohit Dhamke</span>
                         </h1>
                         
-                        <p class="text-xl text-gray-400 max-w-xl leading-relaxed font-light">
-                            Hi, I'm <span class="text-white font-semibold">Rohit Dhamke</span>. A creative Full Stack Developer crafting seamless, user-centric experiences with modern code.
+                        <h2 class="text-2xl md:text-3xl text-gray-400 font-light">
+                            <span class="font-medium text-white">Full Stack Developer</span> & UI Designer
+                        </h2>
+                        
+                        <p class="text-gray-400 text-lg max-w-lg mx-auto md:mx-0 leading-relaxed">
+                            Crafting pixel-perfect digital experiences with clean code and modern design. Specializing in minimal, performance-driven web applications.
                         </p>
                         
-                        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                            <a href="#projects" class="px-8 py-4 bg-white text-gray-900 rounded-xl font-bold hover:bg-gray-100 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] flex items-center justify-center gap-2 group transform hover:-translate-y-1">
-                                View My Work
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                            <a href="#projects" class="group w-full sm:w-auto px-8 py-4 bg-white text-black rounded-xl font-bold transition-all duration-300 hover:bg-gray-200 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] flex items-center justify-center gap-2">
+                                <span>View My Work</span>
                                 <ion-icon name="arrow-forward-outline" class="group-hover:translate-x-1 transition-transform"></ion-icon>
                             </a>
-                            <a href="#contact" class="px-8 py-4 border border-gray-600 text-white rounded-xl font-semibold hover:bg-gray-800 hover:border-gray-500 transition-all text-center backdrop-blur-sm transform hover:-translate-y-1">
-                                Contact Me
+                            
+                            <a href="#contact" class="group w-full sm:w-auto px-8 py-4 bg-transparent text-white border border-white/20 rounded-xl font-medium transition-all duration-300 hover:bg-white/5 hover:border-white/40 flex items-center justify-center gap-2">
+                                <span>Contact Me</span>
+                                <ion-icon name="mail-outline" class="text-xl"></ion-icon>
                             </a>
                         </div>
-                        
-                        <div class="pt-8 flex items-center gap-8 text-gray-400">
-                            <a href="https://github.com/rohitdhamke" target="_blank" class="text-2xl hover:text-white transition-all hover:scale-125 transform duration-200"><ion-icon name="logo-github"></ion-icon></a>
-                            <a href="https://linkedin.com/in/rohitdhamke" target="_blank" class="text-2xl hover:text-blue-400 transition-all hover:scale-125 transform duration-200"><ion-icon name="logo-linkedin"></ion-icon></a>
-                            <a href="mailto:rohitdhamke7666@gmail.com" class="text-2xl hover:text-pink-400 transition-all hover:scale-125 transform duration-200"><ion-icon name="mail-outline"></ion-icon></a>
+
+                        <!-- Tech Stack Marquee (Static for now) -->
+                        <div class="pt-8 flex items-center justify-center md:justify-start gap-6 text-gray-500 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                             <i class="devicon-react-original text-2xl hover:text-white transition-colors"></i>
+                             <i class="devicon-nodejs-plain text-2xl hover:text-white transition-colors"></i>
+                             <i class="devicon-tailwindcss-original text-2xl hover:text-white transition-colors"></i>
+                             <i class="devicon-mongodb-plain text-2xl hover:text-white transition-colors"></i>
+                             <i class="devicon-javascript-plain text-2xl hover:text-white transition-colors"></i>
                         </div>
                     </div>
 
-                    <!-- Profile Image -->
-                    <div class="flex-1 relative opacity-0 animate-fade-in-up flex justify-center" style="animation-delay: 0.3s;">
+                    <!-- Profile Image / Visual -->
+                    <div class="md:w-1/2 flex justify-center relative md:justify-end animate-fade-in-up" style="animation-delay: 0.2s;">
                         <div class="relative w-80 h-80 md:w-96 md:h-96">
-                            <!-- Background Bloom -->
-                            <div class="absolute inset-0 bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-600 rounded-full blur-[60px] opacity-60 animate-pulse"></div>
+                            <!-- Glows -->
+                            <div class="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
+                            <div class="absolute -inset-4 bg-white/5 rounded-full blur-xl"></div>
                             
                             <!-- Image Container -->
-                            <div class="relative w-full h-full rounded-full overflow-hidden border-2 border-white border-opacity-10 shadow-2xl transform hover:rotate-2 transition-transform duration-500 bg-gray-800">
-                                <img src="assets/profile-pic.jpg" alt="Rohit Dhamke" class="w-full h-full object-cover">
-                                <!-- Subtle grain or overlay -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-40"></div>
+                            <div class="w-full h-full rounded-full overflow-hidden border border-white/10 shadow-2xl relative z-10 bg-black group md:-rotate-3 hover:rotate-0 transition-transform duration-500">
+                                 <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-20"></div>
+                                 <img src="assets/profile-pic.jpg" alt="Rohit Dhamke" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 desaturate-[0.2] hover:desaturate-0">
                             </div>
                             
-                            <!-- Floating Badge 1 -->
-                            <div class="absolute -top-6 -right-6 bg-gray-800 bg-opacity-90 backdrop-blur-md p-4 rounded-xl border border-gray-700 shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
-                                <div class="text-yellow-400 text-2xl">⚡</div>
-                                <div>
-                                    <p class="text-xs text-gray-400 uppercase tracking-wider font-bold">Fast &</p>
-                                    <p class="text-sm font-bold text-white">Responsive</p>
-                                </div>
+                            <!-- Floating Badges -->
+                            <div class="absolute -right-4 top-10 z-30 bg-black/80 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-xl animate-bounce" style="animation-duration: 3s;">
+                                <span class="text-3xl">🚀</span>
                             </div>
-
-                            <!-- Floating Badge 2 -->
-                            <div class="absolute -bottom-8 -left-4 bg-gray-800 bg-opacity-90 backdrop-blur-md p-4 rounded-xl border border-gray-700 shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 5s;">
-                                <div class="bg-indigo-500 p-2 rounded-lg text-white">
-                                    <ion-icon name="code-slash-outline" class="text-xl"></ion-icon>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-gray-400 uppercase tracking-wider font-bold">Developer</p>
-                                    <p class="text-sm font-bold text-white">MERN Stack</p>
-                                </div>
+                            <div class="absolute -left-4 bottom-20 z-30 bg-black/80 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/10 shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
+                                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                                <span class="text-xs font-bold text-gray-300">Open to Work</span>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:block">
+                <div class="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center p-1">
+                    <div class="w-1 h-2 bg-gray-400 rounded-full animate-scroll"></div>
                 </div>
             </div>
         </section>
@@ -203,27 +173,27 @@
         <section id="about" class="py-32 bg-gray-900 relative">
             <div class="container mx-auto px-6">
                 <div class="max-w-6xl mx-auto">
-                    <div class="glass-card rounded-[3rem] p-8 md:p-16 relative overflow-hidden border border-gray-700">
-                        <!-- Decorative bg -->
-                        <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-600 opacity-10 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3"></div>
+                    <div class="glass-card rounded-[3rem] p-8 md:p-16 relative overflow-hidden border border-gray-700/50">
+                        <!-- Minimizing decorative bg -->
+                        <div class="absolute top-0 right-0 w-96 h-96 bg-gray-700/10 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3"></div>
                         
                         <div class="flex flex-col lg:flex-row gap-16 items-center">
                             <!-- Left Content -->
                             <div class="flex-1 space-y-8">
                                 <div>
-                                    <h2 class="text-3xl md:text-5xl font-bold font-heading mb-6">About <span class="text-gradient">Me</span></h2>
-                                    <div class="w-24 h-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+                                    <h2 class="text-3xl md:text-5xl font-bold font-heading mb-6 text-white">About <span class="text-gradient">Me</span></h2>
+                                    <div class="w-24 h-1 bg-gradient-to-r from-white to-gray-600 rounded-full"></div>
                                 </div>
                                 <div class="space-y-6 text-lg text-gray-300 leading-relaxed font-light">
                                     <p>
-                                        I am a final-year <strong class="text-white font-medium">B.Sc. Information Technology</strong> student at K. V. Pendharkar College. My code is my craft, and I strive to build applications that are not just functional, but delightful to use.
+                                        I am a final-year <strong class="text-white font-medium">B.Sc. Information Technology</strong> student at K. V. Pendharkar College. focused on building clean, efficient software.
                                     </p>
                                     <p>
-                                        With a strong command of the <strong class="text-white font-medium">MERN stack</strong>, I bridge the gap between complex backend logic and sleek frontend interfaces. Whether optimizing MongoDB queries or tweaking Tailwind configurations, I'm obsessed with details.
+                                        With a strong command of the <strong class="text-white font-medium">MERN stack</strong>, I bridge the gap between complex backend logic and sleek frontend interfaces. My approach is data-driven and user-focused.
                                     </p>
                                 </div>
                                 <div class="flex gap-4">
-                                    <a href="#contact" class="text-indigo-400 font-semibold border-b-2 border-indigo-400 hover:text-indigo-300 hover:border-indigo-300 transition-colors">Let's Talk</a>
+                                    <a href="#contact" class="text-white font-semibold border-b-2 border-white hover:text-gray-300 hover:border-gray-300 transition-colors">Let's Talk</a>
                                     <span class="text-gray-600">|</span>
                                     <a href="#projects" class="text-gray-400 hover:text-white transition-colors">See Projects</a>
                                 </div>
@@ -231,22 +201,22 @@
                             
                             <!-- Right Stats Grid -->
                             <div class="flex-1 w-full lg:w-auto">
-                                <div class="grid grid-cols-2 gap-6">
-                                    <div class="bg-gray-800 bg-opacity-40 p-8 rounded-3xl border border-gray-700 hover:border-indigo-500 transition-all hover:-translate-y-1 hover:shadow-xl group">
-                                        <h4 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 mb-2 group-hover:scale-110 transition-transform origin-left">3+</h4>
-                                        <p class="text-sm text-gray-400 font-medium tracking-wide">LIVE PROJECTS</p>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="bg-gray-800/40 p-8 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl group">
+                                        <h4 class="text-4xl font-bold text-white mb-2 group-hover:scale-105 transition-transform origin-left">3+</h4>
+                                        <p class="text-xs text-gray-400 font-bold tracking-widest uppercase">Live Projects</p>
                                     </div>
-                                    <div class="bg-gray-800 bg-opacity-40 p-8 rounded-3xl border border-gray-700 hover:border-purple-500 transition-all hover:-translate-y-1 hover:shadow-xl group">
-                                        <h4 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mb-2 group-hover:scale-110 transition-transform origin-left">2026</h4>
-                                        <p class="text-sm text-gray-400 font-medium tracking-wide">GRADUATION</p>
+                                    <div class="bg-gray-800/40 p-8 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl group">
+                                        <h4 class="text-4xl font-bold text-white mb-2 group-hover:scale-105 transition-transform origin-left">2026</h4>
+                                        <p class="text-xs text-gray-400 font-bold tracking-widest uppercase">Graduation</p>
                                     </div>
-                                    <div class="bg-gray-800 bg-opacity-40 p-8 rounded-3xl border border-gray-700 hover:border-green-500 transition-all hover:-translate-y-1 hover:shadow-xl col-span-2 group">
+                                    <div class="bg-gray-800/40 p-8 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-xl col-span-2 group">
                                         <div class="flex justify-between items-end">
                                             <div>
-                                                <h4 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-2 group-hover:scale-110 transition-transform origin-left">10+</h4>
-                                                <p class="text-sm text-gray-400 font-medium tracking-wide">TECH STACK SKILLS</p>
+                                                <h4 class="text-4xl font-bold text-white mb-2 group-hover:scale-105 transition-transform origin-left">10+</h4>
+                                                <p class="text-xs text-gray-400 font-bold tracking-widest uppercase">Tech Stack Skills</p>
                                             </div>
-                                            <ion-icon name="hardware-chip-outline" class="text-4xl text-gray-600 group-hover:text-green-400 transition-colors"></ion-icon>
+                                            <ion-icon name="hardware-chip-outline" class="text-4xl text-gray-600 group-hover:text-white transition-colors"></ion-icon>
                                         </div>
                                     </div>
                                 </div>
@@ -259,63 +229,63 @@
 
         <!-- Skills Section -->
         <section id="skills" class="py-32 bg-gray-900 relative">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-20 mask-image-gradient"></div>
+             <!-- Removed data:image pattern for cleaner look -->
             
             <div class="container mx-auto px-6 relative z-10">
                 <div class="text-center mb-20">
-                    <span class="text-indigo-400 font-bold tracking-widest text-sm uppercase mb-2 block">My Arsenal</span>
-                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-6">Technical <span class="text-white">Skills</span></h2>
+                    <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-2 block">My Arsenal</span>
+                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-6 text-white">Technical <span class="text-gradient">Skills</span></h2>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg">Industry-standard tools and technologies I use to build robust applications.</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Frontend -->
-                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(99,102,241,0.15)]">
+                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 bg-gray-700 rounded-2xl flex items-center justify-center text-indigo-400 text-2xl group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+                            <div class="w-12 h-12 bg-gray-700/50 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-gray-900 transition-colors">
                                 <ion-icon name="desktop-outline"></ion-icon>
                             </div>
                             <h3 class="text-xl font-bold text-white">Frontend</h3>
                         </div>
                         <div class="grid grid-cols-3 gap-6">
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-html5-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-html5-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">HTML</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-css3-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-css3-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">CSS</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-javascript-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-javascript-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">JS</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-react-original colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg p-1 bg-gray-800 rounded-full"></i>
+                                <i class="devicon-react-original colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg p-1 bg-gray-800 rounded-full"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">React</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-tailwindcss-original colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-tailwindcss-original colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Tailwind</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-bootstrap-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-bootstrap-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-all drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Boot</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Backend -->
-                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(20,184,166,0.15)]">
+                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 bg-gray-700 rounded-2xl flex items-center justify-center text-teal-400 text-2xl group-hover:bg-teal-500 group-hover:text-white transition-colors">
+                            <div class="w-12 h-12 bg-gray-700/50 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-gray-900 transition-colors">
                                 <ion-icon name="server-outline"></ion-icon>
                             </div>
                             <h3 class="text-xl font-bold text-white">Backend</h3>
                         </div>
                         <div class="grid grid-cols-3 gap-6">
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-nodejs-plain colored text-5xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-nodejs-plain colored text-5xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Node</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
@@ -323,8 +293,8 @@
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Express</span>
                             </div>
                              <div class="flex flex-col items-center gap-3 group/icon">
-                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded border border-gray-600 group-hover/icon:border-green-400 transition-colors">
-                                    <span class="text-[10px] font-bold text-green-400">JWT</span>
+                                <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded border border-gray-600 group-hover/icon:border-white transition-colors">
+                                    <span class="text-[10px] font-bold text-gray-400 group-hover/icon:text-white">JWT</span>
                                 </div>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Auth</span>
                              </div>
@@ -332,36 +302,36 @@
                     </div>
 
                     <!-- Database -->
-                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)]">
+                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 bg-gray-700 rounded-2xl flex items-center justify-center text-orange-400 text-2xl group-hover:bg-orange-500 group-hover:text-white transition-colors">
+                            <div class="w-12 h-12 bg-gray-700/50 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-gray-900 transition-colors">
                                 <ion-icon name="cube-outline"></ion-icon>
                             </div>
                             <h3 class="text-xl font-bold text-white">Data</h3>
                         </div>
                         <div class="grid grid-cols-3 gap-6">
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-mongodb-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-mongodb-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Mongo</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-oracle-original colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-oracle-original colored text-4xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Oracle</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Tools -->
-                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(236,72,153,0.15)]">
+                    <div class="glass-card p-8 rounded-3xl hover:bg-gray-800 transition-all group duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-4 mb-8">
-                            <div class="w-12 h-12 bg-gray-700 rounded-2xl flex items-center justify-center text-pink-400 text-2xl group-hover:bg-pink-500 group-hover:text-white transition-colors">
+                            <div class="w-12 h-12 bg-gray-700/50 rounded-2xl flex items-center justify-center text-white text-2xl group-hover:bg-white group-hover:text-gray-900 transition-colors">
                                 <ion-icon name="construct-outline"></ion-icon>
                             </div>
                             <h3 class="text-xl font-bold text-white">Tools</h3>
                         </div>
                         <div class="grid grid-cols-3 gap-6">
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-git-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-git-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Git</span>
                             </div>
                              <div class="flex flex-col items-center gap-3 group/icon">
@@ -369,11 +339,11 @@
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">GitHub</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-postman-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-postman-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Postman</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
-                                <i class="devicon-vscode-plain colored text-4xl group-hover/icon:scale-125 transition-transform drop-shadow-lg"></i>
+                                <i class="devicon-vscode-plain colored text-4xl grayscale group-hover/icon:grayscale-0 transition-transform drop-shadow-lg"></i>
                                 <span class="text-[10px] text-gray-500 font-mono uppercase tracking-wider">VSCode</span>
                             </div>
                             <div class="flex flex-col items-center gap-3 group/icon">
@@ -390,26 +360,26 @@
         <section id="experience" class="py-32 bg-gray-900 relative">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <span class="text-indigo-400 font-bold tracking-widest text-sm uppercase mb-2 block">My Career</span>
-                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-6">Professional <span class="text-white">Experience</span></h2>
+                    <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-2 block">My Career</span>
+                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-6 text-white">Professional <span class="text-gradient">Experience</span></h2>
                     <p class="text-gray-400 max-w-2xl mx-auto text-lg">My journey in the tech industry, featuring internships, training, and self-directed growth.</p>
                 </div>
 
                 <div class="max-w-5xl mx-auto space-y-8">
                     <!-- Experience Item 1: EARGS -->
-                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700 hover:border-indigo-500 transition-all hover:shadow-[0_0_30px_rgba(99,102,241,0.15)] group relative overflow-hidden">
-                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <ion-icon name="briefcase-outline" class="text-9xl text-indigo-400"></ion-icon>
+                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:shadow-xl group relative overflow-hidden">
+                         <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <ion-icon name="briefcase-outline" class="text-9xl text-white"></ion-icon>
                         </div>
                         <div class="flex flex-col md:flex-row gap-6 md:gap-10 relative z-10">
                             <div class="md:w-1/3">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">Web Development Intern</h3>
-                                <p class="text-indigo-300 font-medium text-lg mt-1">EARGS</p>
-                                <div class="flex items-center gap-2 mt-3 text-gray-400 text-sm">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">Web Development Intern</h3>
+                                <p class="text-gray-400 font-medium text-lg mt-1">EARGS</p>
+                                <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
                                     <ion-icon name="calendar-outline"></ion-icon>
                                     <span>Nov 2025 – Present</span>
                                 </div>
-                                <div class="flex items-center gap-2 mt-1 text-gray-400 text-sm">
+                                <div class="flex items-center gap-2 mt-1 text-gray-500 text-sm">
                                     <ion-icon name="location-outline"></ion-icon>
                                     <span>Remote / Hybrid</span>
                                 </div>
@@ -420,41 +390,41 @@
                                 </p>
                                 <ul class="space-y-2">
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-indigo-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Developing responsive user interfaces with <strong>HTML, CSS, and JavaScript</strong>, ensuring cross-browser compatibility.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-indigo-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Collaborating with senior developers via <strong>Git & GitHub</strong> for efficient code management and peer reviews.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-indigo-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Optimizing page load speeds and performance through efficient coding and asset management.</span>
                                     </li>
                                 </ul>
                                 <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Frontend</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Git</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Teamwork</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Frontend</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Git</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Teamwork</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Experience Item 2: Nettech India -->
-                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700 hover:border-purple-500 transition-all hover:shadow-[0_0_30px_rgba(168,85,247,0.15)] group relative overflow-hidden">
-                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <ion-icon name="school-outline" class="text-9xl text-purple-400"></ion-icon>
+                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:shadow-xl group relative overflow-hidden">
+                         <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <ion-icon name="school-outline" class="text-9xl text-white"></ion-icon>
                         </div>
                         <div class="flex flex-col md:flex-row gap-6 md:gap-10 relative z-10">
                             <div class="md:w-1/3">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">Full Stack Development Trainee</h3>
-                                <p class="text-purple-300 font-medium text-lg mt-1">Nettech India</p>
-                                <div class="flex items-center gap-2 mt-3 text-gray-400 text-sm">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">Full Stack Trainee</h3>
+                                <p class="text-gray-400 font-medium text-lg mt-1">Nettech India</p>
+                                <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
                                     <ion-icon name="calendar-outline"></ion-icon>
                                     <span>April 2025 – Present</span>
                                 </div>
-                                <div class="flex items-center gap-2 mt-1 text-gray-400 text-sm">
+                                <div class="flex items-center gap-2 mt-1 text-gray-500 text-sm">
                                     <ion-icon name="location-outline"></ion-icon>
                                     <span>Thane, India</span>
                                 </div>
@@ -465,36 +435,36 @@
                                 </p>
                                 <ul class="space-y-2">
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-purple-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Mastering <strong>MongoDB, Express, React, and Node.js</strong> to build dynamic, data-driven applications.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-purple-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Implementing <strong>RESTful APIs</strong> and real-time database interactions for seamless frontend-backend integration.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-purple-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Designed and deployed multiple capstone projects simulating real-world business requirements.</span>
                                     </li>
                                 </ul>
                                 <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">MERN Stack</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">API Design</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">MERN Stack</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">API Design</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Experience Item 3: Project-based -->
-                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700 hover:border-pink-500 transition-all hover:shadow-[0_0_30px_rgba(236,72,153,0.15)] group relative overflow-hidden">
-                         <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                            <ion-icon name="code-slash-outline" class="text-9xl text-pink-400"></ion-icon>
+                    <div class="glass-card p-8 md:p-10 rounded-3xl border border-gray-700/50 hover:border-white/20 transition-all hover:shadow-xl group relative overflow-hidden">
+                         <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                            <ion-icon name="code-slash-outline" class="text-9xl text-white"></ion-icon>
                         </div>
                         <div class="flex flex-col md:flex-row gap-6 md:gap-10 relative z-10">
                             <div class="md:w-1/3">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-pink-400 transition-colors">Self-Directed Developer</h3>
-                                <p class="text-pink-300 font-medium text-lg mt-1">Project-Based Learning</p>
-                                <div class="flex items-center gap-2 mt-3 text-gray-400 text-sm">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">Self-Directed Developer</h3>
+                                <p class="text-gray-400 font-medium text-lg mt-1">Project-Based Learning</p>
+                                <div class="flex items-center gap-2 mt-3 text-gray-500 text-sm">
                                     <ion-icon name="calendar-outline"></ion-icon>
                                     <span>Ongoing</span>
                                 </div>
@@ -505,27 +475,26 @@
                                 </p>
                                 <ul class="space-y-2">
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-pink-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Engineered secure <strong>Authentication Systems</strong> using JWT, bcrypt, and session management.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-pink-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Built scalable backends with <strong>Node.js & Express</strong>, handling complex CRUD operations and middleware logic.</span>
                                     </li>
                                     <li class="flex items-start gap-3">
-                                        <ion-icon name="checkmark-circle" class="text-pink-500 mt-1 flex-shrink-0"></ion-icon>
+                                        <ion-icon name="checkmark-circle" class="text-gray-500 mt-1 flex-shrink-0"></ion-icon>
                                         <span class="text-gray-400 text-sm">Focused on clean code architecture, component reusability in React, and responsive designs with Tailwind CSS.</span>
                                     </li>
                                 </ul>
                                 <div class="flex flex-wrap gap-2 pt-2">
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Self-Starter</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Full Stack</span>
-                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-600">Problem Solving</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Self-Starter</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Full Stack</span>
+                                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-bold border border-gray-700">Problem Solving</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                
                 </div>
             </div>
         </section>
@@ -535,8 +504,8 @@
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                     <div>
-                        <span class="text-indigo-400 font-bold tracking-widest text-sm uppercase mb-2 block">My Work</span>
-                        <h2 class="text-4xl md:text-6xl font-bold font-heading">Featured <span class="text-white">Projects</span></h2>
+                        <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-2 block">My Work</span>
+                        <h2 class="text-4xl md:text-6xl font-bold font-heading text-white">Featured <span class="text-gradient">Projects</span></h2>
                     </div>
                     <p class="text-gray-400 max-w-sm text-right hidden md:block">
                         A selection of projects that showcase my ability to solve real-world problems.
@@ -545,19 +514,21 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Project 1: CodeBuddy (Main Project) -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover:border-indigo-500 hover:border-opacity-50 transition-all hover:shadow-[0_10px_40px_rgba(99,102,241,0.2)] group flex flex-col h-full transform hover:-translate-y-2 duration-500">
-                        <div class="h-56 bg-gradient-to-br from-gray-800 to-indigo-900 flex items-center justify-center relative overflow-hidden group">
-                           <div class="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="glass-card rounded-3xl overflow-hidden hover:border-white/20 transition-all hover:shadow-xl group flex flex-col h-full transform hover:-translate-y-2 duration-500">
+                        <div class="h-56 bg-gray-800 relative overflow-hidden group">
+                           <div class="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
                            <!-- Decorative pattern -->
                            <div class="absolute -right-10 -bottom-10 text-9xl text-white opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700 font-bold">
                                BUDDY
                            </div>
-                           <ion-icon name="code-working-outline" class="text-7xl text-indigo-200 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"></ion-icon>
+                           <div class="absolute inset-0 flex items-center justify-center">
+                                <ion-icon name="code-working-outline" class="text-7xl text-gray-500 group-hover:text-white transition-colors duration-500 drop-shadow-2xl"></ion-icon>
+                           </div>
                         </div>
                         <div class="p-8 flex-1 flex flex-col relative">
                             <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-indigo-400 transition-colors">CodeBuddy</h3>
-                                <a href="https://codebuddys-by-rohitdhamke.netlify.app" target="_blank" class="text-gray-600 -rotate-45 group-hover:rotate-0 group-hover:text-indigo-400 transition-all duration-300 text-xl">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">CodeBuddy</h3>
+                                <a href="https://codebuddys-by-rohitdhamke.netlify.app" target="_blank" class="text-gray-500 -rotate-45 group-hover:rotate-0 group-hover:text-white transition-all duration-300 text-xl">
                                     <ion-icon name="arrow-forward"></ion-icon>
                                 </a>
                             </div>
@@ -565,26 +536,27 @@
                                 AI-powered tool explaining code snippets in a beginner-friendly format. Integrated Groq API for AI logic and Monaco Editor.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-bold px-3 py-1.5 bg-indigo-500 bg-opacity-10 text-indigo-300 rounded-full border border-indigo-500 border-opacity-20">React.js</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-purple-500 bg-opacity-10 text-purple-300 rounded-full border border-purple-500 border-opacity-20">Groq AI</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full">Aug 2025</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">React.js</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">Groq AI</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2: Bootstrap Web -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover:border-purple-500 hover:border-opacity-50 transition-all hover:shadow-[0_10px_40px_rgba(168,85,247,0.2)] group flex flex-col h-full transform hover:-translate-y-2 duration-500">
-                        <div class="h-56 bg-gradient-to-br from-gray-800 to-purple-900 flex items-center justify-center relative overflow-hidden group">
-                           <div class="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="glass-card rounded-3xl overflow-hidden hover:border-white/20 transition-all hover:shadow-xl group flex flex-col h-full transform hover:-translate-y-2 duration-500">
+                        <div class="h-56 bg-gray-800 relative overflow-hidden group">
+                           <div class="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="absolute -right-10 -bottom-10 text-9xl text-white opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700 font-bold">
                                BS5
                            </div>
-                           <ion-icon name="layers-outline" class="text-7xl text-purple-200 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"></ion-icon>
+                           <div class="absolute inset-0 flex items-center justify-center">
+                                <ion-icon name="layers-outline" class="text-7xl text-gray-500 group-hover:text-white transition-colors duration-500 drop-shadow-2xl"></ion-icon>
+                           </div>
                         </div>
                         <div class="p-8 flex-1 flex flex-col relative">
                            <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">BOOTSTRAP WEB</h3>
-                                <a href="https://bootstrap-web-by-rohit.vercel.app/" target="_blank" class="text-gray-600 -rotate-45 group-hover:rotate-0 group-hover:text-purple-400 transition-all duration-300 text-xl">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">BOOTSTRAP WEB</h3>
+                                <a href="https://bootstrap-web-by-rohit.vercel.app/" target="_blank" class="text-gray-500 -rotate-45 group-hover:rotate-0 group-hover:text-white transition-all duration-300 text-xl">
                                     <ion-icon name="arrow-forward"></ion-icon>
                                 </a>
                             </div>
@@ -592,26 +564,27 @@
                                 Modern responsive website showcasing Bootstrap framework components, grid systems, and custom styling.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-bold px-3 py-1.5 bg-purple-500 bg-opacity-10 text-purple-300 rounded-full border border-purple-500 border-opacity-20">Bootstrap 5</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-blue-500 bg-opacity-10 text-blue-300 rounded-full border border-blue-500 border-opacity-20">CSS3</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full">Dec 2025</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">Bootstrap 5</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">CSS3</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover:border-cyan-500 hover:border-opacity-50 transition-all hover:shadow-[0_10px_40px_rgba(34,211,238,0.2)] group flex flex-col h-full transform hover:-translate-y-2 duration-500">
-                        <div class="h-56 bg-gradient-to-br from-gray-800 to-cyan-900 flex items-center justify-center relative overflow-hidden group">
-                           <div class="absolute inset-0 bg-cyan-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="glass-card rounded-3xl overflow-hidden hover:border-white/20 transition-all hover:shadow-xl group flex flex-col h-full transform hover:-translate-y-2 duration-500">
+                        <div class="h-56 bg-gray-800 relative overflow-hidden group">
+                           <div class="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="absolute -right-10 -bottom-10 text-9xl text-white opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700 font-bold">
                                RAIN
                            </div>
-                           <ion-icon name="rainy-outline" class="text-7xl text-cyan-200 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"></ion-icon>
+                           <div class="absolute inset-0 flex items-center justify-center">
+                                <ion-icon name="rainy-outline" class="text-7xl text-gray-500 group-hover:text-white transition-colors duration-500 drop-shadow-2xl"></ion-icon>
+                           </div>
                         </div>
                         <div class="p-8 flex-1 flex flex-col relative">
                             <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">WEATHER WISE</h3>
-                                <a href="https://react-weather-app-by-rohitdhamke.vercel.app/" target="_blank" class="text-gray-600 -rotate-45 group-hover:rotate-0 group-hover:text-cyan-400 transition-all duration-300 text-xl">
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">WEATHER WISE</h3>
+                                <a href="https://react-weather-app-by-rohitdhamke.vercel.app/" target="_blank" class="text-gray-500 -rotate-45 group-hover:rotate-0 group-hover:text-white transition-all duration-300 text-xl">
                                     <ion-icon name="arrow-forward"></ion-icon>
                                 </a>
                             </div>
@@ -619,34 +592,34 @@
                                 Responsive weather application fetching real-time data via REST APIs using Fetch API. Dynamic backgrounds based on conditions.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-bold px-3 py-1.5 bg-cyan-500 bg-opacity-10 text-cyan-300 rounded-full border border-cyan-500 border-opacity-20">JS</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-blue-500 bg-opacity-10 text-blue-300 rounded-full border border-blue-500 border-opacity-20">REST API</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full">Jun 2025</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">JS</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">REST API</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="glass-card rounded-3xl overflow-hidden hover:border-purple-500 hover:border-opacity-50 transition-all hover:shadow-[0_10px_40px_rgba(168,85,247,0.2)] group flex flex-col h-full transform hover:-translate-y-2 duration-500">
-                        <div class="h-56 bg-gradient-to-br from-gray-800 to-purple-900 flex items-center justify-center relative overflow-hidden group">
-                           <div class="absolute inset-0 bg-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
+                    <div class="glass-card rounded-3xl overflow-hidden hover:border-white/20 transition-all hover:shadow-xl group flex flex-col h-full transform hover:-translate-y-2 duration-500">
+                        <div class="h-56 bg-gray-800 relative overflow-hidden group">
+                           <div class="absolute inset-0 bg-gray-700 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
                             <div class="absolute -right-10 -bottom-10 text-9xl text-white opacity-5 rotate-12 group-hover:rotate-0 transition-transform duration-700 font-bold">
                                AUTH
                            </div>
-                           <ion-icon name="shield-checkmark-outline" class="text-7xl text-purple-200 group-hover:scale-110 transition-transform duration-500 drop-shadow-2xl"></ion-icon>
+                           <div class="absolute inset-0 flex items-center justify-center">
+                                <ion-icon name="shield-checkmark-outline" class="text-7xl text-gray-500 group-hover:text-white transition-colors duration-500 drop-shadow-2xl"></ion-icon>
+                           </div>
                         </div>
                         <div class="p-8 flex-1 flex flex-col relative">
                            <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">AUTH SYSTEM</h3>
-                                <ion-icon name="arrow-forward" class="text-gray-600 -rotate-45 group-hover:rotate-0 group-hover:text-purple-400 transition-all duration-300 text-xl"></ion-icon>
+                                <h3 class="text-2xl font-bold text-white group-hover:text-gray-200 transition-colors">AUTH SYSTEM</h3>
+                                <ion-icon name="arrow-forward" class="text-gray-500 -rotate-45 group-hover:rotate-0 group-hover:text-white transition-all duration-300 text-xl"></ion-icon>
                             </div>
                             <p class="text-gray-400 text-sm mb-6 flex-1 leading-relaxed border-l-2 border-gray-700 pl-4">
                                 Robust authentication system featuring JWT implementation, secure password hashing, and role-based access control.
                             </p>
                             <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-bold px-3 py-1.5 bg-purple-500 bg-opacity-10 text-purple-300 rounded-full border border-purple-500 border-opacity-20">Node.js</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-green-500 bg-opacity-10 text-green-300 rounded-full border border-green-500 border-opacity-20">JWT</span>
-                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-700 text-gray-300 rounded-full">Jul 2025</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">Node.js</span>
+                                <span class="text-xs font-bold px-3 py-1.5 bg-gray-800 text-gray-300 rounded-full border border-gray-700">JWT</span>
                             </div>
                         </div>
                     </div>
@@ -657,12 +630,12 @@
         <!-- Education Section -->
         <section id="education" class="py-32 bg-gray-900 relative overflow-hidden">
              <!-- Background elements -->
-             <div class="absolute top-1/2 right-0 w-96 h-96 bg-indigo-600 bg-opacity-5 rounded-full blur-3xl -z-10 animate-pulse"></div>
+             <div class="absolute top-1/2 right-0 w-96 h-96 bg-gray-700/5 rounded-full blur-3xl -z-10 animate-pulse"></div>
 
             <div class="container mx-auto px-6">
                  <div class="text-center mb-20">
-                    <span class="text-indigo-400 font-bold tracking-widest text-sm uppercase mb-2 block">My Journey</span>
-                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-4">Education <span class="text-gray-600">&</span> Milestones</h2>
+                    <span class="text-gray-400 font-bold tracking-widest text-xs uppercase mb-2 block">My Journey</span>
+                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-4 text-white">Education <span class="text-gradient">& Milestones</span></h2>
                 </div>
                 
                 <div class="max-w-4xl mx-auto space-y-12 relative">
@@ -672,33 +645,33 @@
                     <!-- Item 1 -->
                     <div class="relative flex flex-col md:flex-row items-center w-full group">
                         <div class="md:w-1/2 md:pr-12 md:text-right pl-24 md:pl-0 w-full mb-4 md:mb-0">
-                            <div class="p-8 bg-gray-800 bg-opacity-40 rounded-3xl border border-gray-700 hover:border-indigo-500 hover:bg-gray-800 transition-all shadow-xl group-hover:-translate-x-1">
+                            <div class="p-8 bg-gray-800/40 rounded-3xl border border-gray-700/50 hover:border-white/20 hover:bg-gray-800 transition-all shadow-xl group-hover:-translate-x-1">
                                 <h3 class="text-2xl font-bold text-white mb-2">B.Sc. IT</h3>
-                                <p class="text-indigo-400 font-medium text-lg">K. V. Pendharkar College</p>
+                                <p class="text-gray-400 font-medium text-lg">K. V. Pendharkar College</p>
                                 <p class="text-gray-500 text-sm mt-1">Dombivli, India</p>
-                                <div class="mt-4 inline-block px-3 py-1 bg-indigo-500 bg-opacity-10 text-indigo-300 text-xs font-bold rounded-full">
+                                <div class="mt-4 inline-block px-3 py-1 bg-gray-800 text-gray-300 text-xs font-bold rounded-full border border-gray-700">
                                     Expected 2026
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-indigo-600 rounded-full border-4 border-gray-900 -translate-x-3 md:-translate-x-3 z-10 shadow-[0_0_20px_rgba(99,102,241,0.6)] group-hover:scale-125 transition-transform"></div>
-                        <div class="md:w-1/2 md:pl-12 w-full text-gray-500 text-sm hidden md:block">
-                            Specializing in Full Stack Development and Database Management.
+                        <div class="absolute left-8 md:left-1/2 w-6 h-6 bg-white rounded-full border-4 border-gray-900 -translate-x-3 md:-translate-x-3 z-10 shadow-lg group-hover:scale-125 transition-transform"></div>
+                        <div class="md:w-1/2 md:pl-12 w-full text-gray-500 text-sm hidden md:block leading-relaxed">
+                            Specializing in Full Stack Development and Database Management. Focused on practical application of concepts.
                         </div>
                     </div>
 
                     <!-- Item 2 -->
                     <div class="relative flex flex-col md:flex-row items-center w-full group">
-                        <div class="md:w-1/2 md:pr-12 md:text-right w-full text-gray-500 text-sm hidden md:block">
-                            Completed Higher Secondary education with Science stream.
+                        <div class="md:w-1/2 md:pr-12 md:text-right w-full text-gray-500 text-sm hidden md:block leading-relaxed">
+                            Completed Higher Secondary education with Science stream, establishing a strong foundation in logic.
                         </div>
-                        <div class="absolute left-8 md:left-1/2 w-5 h-5 bg-gray-600 rounded-full border-4 border-gray-900 -translate-x-2.5 md:-translate-x-2.5 z-10 group-hover:bg-indigo-400 transition-colors"></div>
+                        <div class="absolute left-8 md:left-1/2 w-5 h-5 bg-gray-600 rounded-full border-4 border-gray-900 -translate-x-2.5 md:-translate-x-2.5 z-10 group-hover:bg-gray-400 transition-colors"></div>
                         <div class="md:w-1/2 md:pl-12 pl-24 w-full">
-                            <div class="p-8 bg-gray-800 bg-opacity-40 rounded-3xl border border-gray-700 hover:border-indigo-500 hover:bg-gray-800 transition-all shadow-xl group-hover:translate-x-1">
+                            <div class="p-8 bg-gray-800/40 rounded-3xl border border-gray-700/50 hover:border-white/20 hover:bg-gray-800 transition-all shadow-xl group-hover:translate-x-1">
                                 <h3 class="text-2xl font-bold text-white mb-2">HSC (Science)</h3>
-                                <p class="text-indigo-400 font-medium text-lg">B.B.S. Jr. College</p>
+                                <p class="text-gray-400 font-medium text-lg">B.B.S. Jr. College</p>
                                 <p class="text-gray-500 text-sm mt-1">Zadpoli, India</p>
-                                <div class="mt-4 inline-block px-3 py-1 bg-gray-700 text-gray-300 text-xs font-bold rounded-full">
+                                <div class="mt-4 inline-block px-3 py-1 bg-gray-800 text-gray-300 text-xs font-bold rounded-full border border-gray-700">
                                     Completed
                                 </div>
                             </div>
@@ -708,16 +681,16 @@
                      <!-- Item 3 -->
                      <div class="relative flex flex-col md:flex-row items-center w-full group">
                         <div class="md:w-1/2 md:pr-12 md:text-right pl-24 md:pl-0 w-full mb-4 md:mb-0">
-                             <div class="p-8 bg-gray-800 bg-opacity-40 rounded-3xl border border-gray-700 hover:border-indigo-500 hover:bg-gray-800 transition-all shadow-xl group-hover:-translate-x-1">
+                             <div class="p-8 bg-gray-800/40 rounded-3xl border border-gray-700/50 hover:border-white/20 hover:bg-gray-800 transition-all shadow-xl group-hover:-translate-x-1">
                                 <h3 class="text-2xl font-bold text-white mb-2">SSC</h3>
-                                <p class="text-indigo-400 font-medium text-lg">Jawahar Navodaya Vidyalaya</p>
+                                <p class="text-gray-400 font-medium text-lg">Jawahar Navodaya Vidyalaya</p>
                                 <p class="text-gray-500 text-sm mt-1">Palghar, India</p>
-                                <div class="mt-4 inline-block px-3 py-1 bg-gray-700 text-gray-300 text-xs font-bold rounded-full">
+                                <div class="mt-4 inline-block px-3 py-1 bg-gray-800 text-gray-300 text-xs font-bold rounded-full border border-gray-700">
                                     Completed
                                 </div>
                             </div>
                         </div>
-                        <div class="absolute left-8 md:left-1/2 w-5 h-5 bg-gray-600 rounded-full border-4 border-gray-900 -translate-x-2.5 md:-translate-x-2.5 z-10 group-hover:bg-indigo-400 transition-colors"></div>
+                        <div class="absolute left-8 md:left-1/2 w-5 h-5 bg-gray-600 rounded-full border-4 border-gray-900 -translate-x-2.5 md:-translate-x-2.5 z-10 group-hover:bg-gray-400 transition-colors"></div>
                         <div class="md:w-1/2 md:pl-12 w-full text-gray-500 text-sm hidden md:block">
                             Foundation schooling with focus on Mathematics and Sciences.
                         </div>
@@ -729,22 +702,22 @@
         <!-- Contact Section -->
         <section id="contact" class="py-32 bg-gray-900">
             <div class="container mx-auto px-6">
-                <div class="max-w-5xl mx-auto bg-gradient-to-br from-indigo-900 via-gray-900 to-gray-900 rounded-[3rem] p-10 md:p-20 border border-indigo-500 border-opacity-30 text-center relative overflow-hidden shadow-2xl">
-                    <!-- Background Effects -->
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-indigo-500 opacity-20 rounded-full blur-[100px] -z-10 animate-pulse"></div>
-                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 opacity-20 rounded-full blur-[100px] -z-10 animate-pulse" style="animation-delay: 1s;"></div>
+                <div class="max-w-5xl mx-auto bg-gray-800/30 rounded-[3rem] p-10 md:p-20 border border-gray-700/50 text-center relative overflow-hidden backdrop-blur-sm">
+                    <!-- Subtle Background Effects -->
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -z-10"></div>
+                    <div class="absolute bottom-0 left-0 w-96 h-96 bg-gray-500/10 rounded-full blur-[100px] -z-10"></div>
                     
-                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-8 relative z-10">Let's Build Something <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Amazing Together</span></h2>
-                    <p class="text-gray-300 mb-12 max-w-xl mx-auto relative z-10 text-xl font-light leading-relaxed">
+                    <h2 class="text-4xl md:text-6xl font-bold font-heading mb-8 relative z-10 text-white">Let's Build Something <br><span class="text-gradient">Amazing Together</span></h2>
+                    <p class="text-gray-400 mb-12 max-w-xl mx-auto relative z-10 text-xl font-light leading-relaxed">
                         I'm currently opening for internships and entry-level opportunities. Have a project in mind or just want to chat tech?
                     </p>
                     
                     <div class="flex flex-col md:flex-row justify-center gap-6 relative z-10">
-                        <a href="mailto:rohitdhamke7666@gmail.com" class="flex items-center justify-center gap-3 px-10 py-5 bg-white text-indigo-900 rounded-2xl font-bold hover:bg-gray-100 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transform hover:-translate-y-1">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rohitdhamke7666@gmail.com" target="_blank" class="relative z-20 flex items-center justify-center gap-3 px-10 py-5 bg-white text-gray-900 rounded-2xl font-bold hover:bg-gray-200 transition-all hover:-translate-y-1">
                             <ion-icon name="mail" class="text-2xl"></ion-icon>
                             Send Email
                         </a>
-                        <a href="tel:7666178374" class="flex items-center justify-center gap-3 px-10 py-5 bg-gray-800 bg-opacity-50 backdrop-blur-md text-white rounded-2xl font-bold hover:bg-gray-800 transition-all border border-gray-600 transform hover:-translate-y-1 hover:border-white">
+                        <a href="tel:7666178374" class="flex items-center justify-center gap-3 px-10 py-5 bg-transparent text-white rounded-2xl font-bold hover:bg-gray-800 transition-all border border-gray-600 transform hover:-translate-y-1 hover:border-white">
                             <ion-icon name="call" class="text-2xl"></ion-icon>
                             +91 7666178374
                         </a>
@@ -752,13 +725,13 @@
 
                     <div class="mt-16 flex justify-center gap-10 border-t border-gray-800 pt-10">
                          <a href="https://github.com/rohitdhamke" class="flex flex-col items-center gap-3 group">
-                            <div class="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-white group-hover:text-gray-900 transition-all duration-300 shadow-lg border border-gray-700">
+                            <div class="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-white group-hover:text-gray-900 transition-all duration-300 border border-gray-700">
                                 <ion-icon name="logo-github"></ion-icon>
                             </div>
                             <span class="text-xs font-bold text-gray-500 group-hover:text-white transition-colors uppercase tracking-wider">GitHub</span>
                         </a>
                         <a href="https://linkedin.com/in/rohitdhamke" class="flex flex-col items-center gap-3 group">
-                            <div class="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-lg border border-gray-700">
+                            <div class="w-14 h-14 bg-gray-800 rounded-2xl flex items-center justify-center text-2xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 border border-gray-700">
                                 <ion-icon name="logo-linkedin"></ion-icon>
                             </div>
                             <span class="text-xs font-bold text-gray-500 group-hover:text-white transition-colors uppercase tracking-wider">LinkedIn</span>
@@ -772,19 +745,19 @@
     <!-- Footer -->
     <footer class="py-12 bg-gray-900 border-t border-gray-800 relative">
         <div class="container mx-auto px-6 text-center">
-            <a href="#" class="inline-block mb-6 text-2xl font-bold font-heading text-indigo-400 tracking-tight flex items-center justify-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
+            <a href="#" class="inline-block mb-6 text-2xl font-bold font-heading text-white tracking-tight flex items-center justify-center gap-2 opacity-50 hover:opacity-100 transition-opacity">
                  <ion-icon name="code-slash"></ion-icon>
-                 <span class="text-white">Rohit</span>Dhamke
+                 <span class="text-gray-400">Rohit</span>Dhamke
             </a>
             <p class="text-gray-600 text-sm">
                 &copy; 2025 Rohit Dhamke. All rights reserved.<br>
-                Crafted with <span class="text-red-500 animate-pulse">❤</span> using <span class="text-indigo-400 font-medium">Tailwind CSS</span>.
+                Crafted with <span class="text-gray-400 animate-pulse">❤</span> using <span class="text-white font-medium">Tailwind CSS</span>.
             </p>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <a href="#header" class="fixed bottom-8 right-8 bg-white text-indigo-900 p-4 rounded-full shadow-[0_0_20px_rgba(99,102,241,0.5)] translate-y-20 opacity-0 pointer-events-none transform transition-all duration-500 hover:bg-indigo-50 focus:outline-none z-[999] hover:-translate-y-1" id="back-to-top">
+    <a href="#header" class="fixed bottom-8 right-8 bg-white text-gray-900 p-4 rounded-full shadow-lg translate-y-20 opacity-0 pointer-events-none transform transition-all duration-500 hover:bg-gray-200 focus:outline-none z-[999] hover:-translate-y-1" id="back-to-top">
         <ion-icon name="arrow-up-outline" class="text-2xl font-bold"></ion-icon>
     </a>
 

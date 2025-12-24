@@ -21,6 +21,48 @@ document.querySelectorAll('.mobile-link').forEach(link => {
     });
 });
 
+// Active Section Highlighting
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('nav a[href^="#"]');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+const activeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            
+            // Desktop Highlight
+            navLinks.forEach(link => {
+                if (link.classList.contains('bg-white')) return; // Skip the "Contact Me" CTA button
+
+                const span = link.querySelector('span');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.remove('text-gray-300');
+                    link.classList.add('text-white');
+                    if(span) span.classList.add('w-full');
+                } else {
+                    link.classList.add('text-gray-300');
+                    link.classList.remove('text-white');
+                    if(span) span.classList.remove('w-full');
+                }
+            });
+
+            // Mobile Highlight
+            mobileLinks.forEach(link => {
+                 if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('text-indigo-400', 'bg-gray-800');
+                    link.classList.remove('text-gray-300');
+                } else {
+                    link.classList.remove('text-indigo-400', 'bg-gray-800');
+                    link.classList.add('text-gray-300');
+                }
+            });
+        }
+    });
+}, { threshold: 0.5 }); // Trigger when 50% of section is visible
+
+sections.forEach(section => activeObserver.observe(section));
+
 // Navbar Scroll Effect
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
